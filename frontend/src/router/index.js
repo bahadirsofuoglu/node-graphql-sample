@@ -1,30 +1,35 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+// Import External Dependancies
+import Vue from 'vue'
+import Router from 'vue-router'
 
-Vue.use(VueRouter);
+// Import Router Views
+import Home from '../views/Home.vue'
+import Car from '../views/Car.vue'
+import Owner from '../views/Owner.vue'
 
-const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home
-  },
-  {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
-  }
-];
+// Initialize Vue Router
+Vue.use(Router)
 
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
-  routes
-});
-
-export default router;
+// Setup Routes
+export default new Router({
+  mode: 'history',
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/cars/:id',
+      name: 'car',
+      component: Car,
+      props: true
+    },
+    {
+      path: '/owner/:id',
+      name: 'owner',
+      component: Owner,
+      props: true
+    }
+  ]
+})
