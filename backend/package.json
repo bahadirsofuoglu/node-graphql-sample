@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/nodemon/bin/nodemon.js index.js",
+    "seed": "node ./src/helpers/seed.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "boom": "^7.3.0",
+    "dotenv": "^8.2.0",
+    "fastify": "^3.11.0",
+    "fastify-cors": "^5.2.0",
+    "fastify-gql": "^5.8.2",
+    "fastify-mongodb": "^2.0.1",
+    "fastify-swagger": "^4.0.0",
+    "graphql": "^15.5.0",
+    "mongoose": "^5.11.14"
+  },
+  "devDependencies": {
+    "faker": "^5.2.0",
+    "nodemon": "^2.0.7"
+  }
+}
